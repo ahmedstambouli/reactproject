@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    /* Baseline settings */
+    "target": "ESNext",                     // Utilisation des dernières fonctionnalités JS
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Bibliothèques nécessaires pour les projets React et modernes
+    "module": "CommonJS",                   // Jest fonctionne mieux avec CommonJS
+    "skipLibCheck": true,                   // Ignore les vérifications des types dans les fichiers de bibliothèque
+
+    /* Bundler mode */
+    "moduleResolution": "node",            // Utilisé pour Node.js et Jest
+    "allowSyntheticDefaultImports": true,  // Importation des modules par défaut
+    "esModuleInterop": true,               // Facilite l'importation des modules CommonJS
+    "resolveJsonModule": true,             // Permet d'importer des fichiers JSON
+    "isolatedModules": true,               // Requis pour les projets avec Babel
+    "noEmit": true,                        // Empêche la génération de fichiers
+    "jsx": "react-jsx",                    // Support de JSX pour React
+
+    /* Linting */
+    "strict": true,                        // Active toutes les vérifications strictes
+    "noUnusedLocals": true,                // Erreur pour les variables inutilisées
+    "noUnusedParameters": true,            // Erreur pour les paramètres inutilisés
+    "noFallthroughCasesInSwitch": true,    // Erreur pour les `case` non traités
+    "forceConsistentCasingInFileNames": true, // Sensibilité à la casse
+
+    /* Debugging & Jest compatibility */
+    "types": ["jest", "node"],             // Ajoute les types pour Jest et Node.js
+    "typeRoots": ["./node_modules/@types"] // Indique où trouver les types TypeScript
+  },
+  "include": ["src"],                       // Inclut les fichiers TypeScript du dossier src
+  "exclude": ["node_modules", "dist", "coverage"], // Exclut les fichiers non nécessaires
+  "references": [{ "path": "./tsconfig.node.json" }] // Références pour la configuration Node.js
+}
